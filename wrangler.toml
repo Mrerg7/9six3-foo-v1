@@ -2,8 +2,17 @@
 # No Worker script / no adapter required
 name = "9six3-foo-v1"
 compatibility_date = "2026-08-11"
+workers_dev = true
 
 [assets]
 directory = "./dist"
 # Optional: handle SPA-style 404s if needed later
 # not_found_handling = "404-page"
+
+[[routes]]
+pattern = "9six3.foo/*"
+zone_name = "9six3.foo"
+
+[[routes]]
+pattern = "www.9six3.foo/*"
+zone_name = "9six3.foo"
