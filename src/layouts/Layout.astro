@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title = '9six3',
-  description = '',
+  description = '9six3 — a demonstration presence at 9six3.foo.',
   image = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/c309a22f-2753-4241-9cc6-b677d8e10300/public',
   noindex = false,
 } = Astro.props;
@@ -30,13 +30,14 @@ const ogImage = image;
     <!-- Primary -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="google-site-verification" content="FjgwfSL_zzVHjFmBNP-fqS1SB7LUgUrYWRlMLyjqs7Y" />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Icons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <!-- Theme -->
     <meta name="theme-color" content="#050505" />
@@ -73,7 +74,7 @@ const ogImage = image;
         "@type": "Organization",
         "name": "9six3",
         "url": "https://9six3.foo",
-        "email": "sales@desertrich.com"
+        "email": "erg@9six3.foo"
       }
     })} />
   </head>
