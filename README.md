@@ -46,6 +46,11 @@ Production target: **https://9six3.foo**
 
 CTA routes to: `sales@desertrich.com`
 
+## SEO / canonical URLs
+
+- Canonical host is **https://9six3.foo** (apex). `www.9six3.foo` → apex via **301**.
+- `/index.html` (and `/index`) are **internal Worker rewrites** that return **200** homepage HTML — not HTTP redirects — so Search Console does not flag them as “Page with redirect”. The HTML canonical still points at `/`.
+
 ## Notes
 
 - Fully static, edge-cached via Cloudflare.

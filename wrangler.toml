@@ -1,14 +1,15 @@
-# Cloudflare Workers Static Assets + thin Worker for SEO redirects
+# Cloudflare Workers Static Assets + thin Worker for SEO routing
 name = "9six3-foo-v1"
 main = "src/worker.js"
 compatibility_date = "2026-08-11"
-workers_dev = true
+# Production landing is custom-domain only (not *.workers.dev)
+workers_dev = false
 
 [assets]
 directory = "./dist"
 binding = "ASSETS"
-# Run Worker first so www→apex and /index.html→/ are permanent 301s
-# (asset HTML handling would otherwise emit 307s that GSC flags)
+# Run Worker first: www→apex 301; /index.html etc. rewritten to / (200 via ASSETS)
+# html_handling keeps / serving index.html content correctly through ASSETS
 run_worker_first = true
 html_handling = "drop-trailing-slash"
 

@@ -1,3 +1,3 @@
-# Permanent redirects for HTML aliases (belt-and-suspenders with Worker)
-/index.html / 301
-/index / 301
+# Path aliases (/index.html, /index) are handled by the Worker as internal
+# rewrites (200), not 301s — so GSC does not report "Page with redirect".
+# www → apex host canonicalization is also in the Worker (301).
